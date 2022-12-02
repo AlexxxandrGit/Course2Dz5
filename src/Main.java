@@ -49,13 +49,11 @@ public class Main {
         System.out.println();
 
 
-        DriverB<Car> ivanov = new DriverB<>("Иванов Иван Иванович", "Категория B", 10);
-        DriverC<Truck> petrov = new DriverC<>("Петров Петр Петрович", "Категория C", 15);
-        DriverD<Bus> perov = new DriverD<>("Перов Евгений Дмитриевич", "Категория D", 8);
+        DriverC driverC = new DriverC("Иванов Иван Иванович", "Категория C", 10, scania);
+        System.out.println(driverC);
 
-        System.out.println(ivanov.getInfo(audi));
-        System.out.println(petrov.getInfo(kamaz));
-        System.out.println(perov.getInfo(laz));
+        DriverB driverB = new DriverB("Петров Андрей Семенович", "Категория B", 5, bmw);
+        System.out.println(driverB);
 
 
     }

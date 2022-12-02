@@ -24,6 +24,7 @@ public class Car extends Transport implements Competing {
         return super.toString();
     }
 
+
     @Override
     public void startMoving() {
         System.out.println("Старт для легкового авто");
@@ -47,6 +48,15 @@ public class Car extends Transport implements Competing {
     @Override
     public void showsTheMaximumSpeed() {
         System.out.println("Максимальная скорость для легкового авто");
+    }
+
+
+    public void printCar() {
+        System.out.println("Легковой автомобиль: " + getBrand() +
+                ", модель: " + getModel() +
+                ", объем двигателя: " + getEngineVolume() + " л");
+
+
     }
 
 

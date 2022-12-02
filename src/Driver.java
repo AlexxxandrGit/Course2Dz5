@@ -1,9 +1,12 @@
-public abstract class Driver {
+public abstract class Driver<T extends Transport> {
     private String fullName;
     private String driverLicense;
     private int experience;
 
-    public Driver(String fullName, String driverLicense, int experience) {
+    private T car;
+
+
+    public Driver(String fullName, String driverLicense, int experience, T car) {
         if (fullName == null || fullName.isEmpty() || fullName.isBlank()) {
             this.fullName = "Введите корректные данные";
         } else {
@@ -12,15 +15,8 @@ public abstract class Driver {
         }
         this.driverLicense = driverLicense;
         this.experience = experience;
+        this.car = car;
     }
-
-    abstract String startMoving();
-
-
-    abstract String stay();
-
-
-    abstract String refuel();
 
 
     public String getFullName() {
@@ -46,6 +42,29 @@ public abstract class Driver {
     public void setExperience(int experience) {
         this.experience = experience;
     }
+
+    @Override
+    public String toString() {
+        return String.format(
+                "Водитель %s управляет автомобилем %s %s и будет участвовать в заезде",
+                this.fullName, this.car.getBrand(), this.car.getModel());
+    }
+
+    public void startDriving() {
+        System.out.printf("Водитель %s начал двигаться", this.fullName);
+        this.car.startMoving();
+    }
+
+    public void finishDriving() {
+        System.out.printf("Водитель %s закончил движение", this.fullName);
+        this.car.finishTheMove();
+    }
+
+    public void refill() {
+        System.out.printf("Водитель %s заправляет  %s %s",
+                this.fullName, this.car.getBrand(), this.car.getModel());
+    }
+
 }
 
 

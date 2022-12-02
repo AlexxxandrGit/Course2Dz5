@@ -47,4 +47,8 @@ public class Bus extends Transport implements Competing {
     public void showsTheMaximumSpeed() {
         System.out.println("Максимальная скорость для Автобуса");
     }
+    public void printBas() {
+        System.out.println( "Автобус: " + getBrand() +
+                " " + getModel() + " Объум двигателя: " + getEngineVolume());
+    }
 }
