@@ -1,7 +1,18 @@
 public class Car extends Transport implements Competing {
 
-    public Car(String brand, String model, double engineVolume) {
+    private BodyType bodyType;
+
+    public Car(String brand, String model, double engineVolume, BodyType bodyType) {
         super(brand, model, engineVolume);
+        this.bodyType = bodyType;
+    }
+
+    public BodyType getBodyType() {
+        return bodyType;
+    }
+
+    public void setBodyType(BodyType bodyType) {
+        this.bodyType = bodyType;
     }
 
     @Override
@@ -35,6 +46,7 @@ public class Car extends Transport implements Competing {
         System.out.println("Финиш для легкового авто");
     }
 
+
     @Override
     public void showsTheBestPitStop() {
         System.out.println("Лучшее время Пит Стоп для Легкового авто");
@@ -48,6 +60,16 @@ public class Car extends Transport implements Competing {
     @Override
     public void showsTheMaximumSpeed() {
         System.out.println("Максимальная скорость для легкового авто");
+    }
+
+    @Override
+    public void printType() {
+        if (bodyType == null) {
+            System.out.println("Данных по авто недостаточно");
+        } else {
+            System.out.println("Тип авто: " + bodyType);
+        }
+
     }
 
 

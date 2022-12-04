@@ -6,4 +6,6 @@ public interface Competing {
 
     void showsTheMaximumSpeed();
 
+    void printType();
+
 }

@@ -1,6 +1,17 @@
 public class Bus extends Transport implements Competing {
-    public Bus(String brand, String model, double engineVolume) {
+    private Capacity capacity;
+
+    public Capacity getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(Capacity capacity) {
+        this.capacity = capacity;
+    }
+
+    public Bus(String brand, String model, double engineVolume, Capacity capacity) {
         super(brand, model, engineVolume);
+        this.capacity = capacity;
     }
 
     @Override
@@ -34,6 +45,15 @@ public class Bus extends Transport implements Competing {
     }
 
     @Override
+    public void printType() {
+        if (capacity == null) {
+            System.out.println("Данных по авто недостаточно");
+        } else {
+            System.out.println("Вместимость авто от " + capacity.getFrom() + " мест до " + capacity.getTo() + " мест");
+        }
+    }
+
+    @Override
     public void showsTheBestPitStop() {
         System.out.println("Лучшее время Пит Стоп для Автобуса");
     }
@@ -47,8 +67,9 @@ public class Bus extends Transport implements Competing {
     public void showsTheMaximumSpeed() {
         System.out.println("Максимальная скорость для Автобуса");
     }
+
     public void printBas() {
-        System.out.println( "Автобус: " + getBrand() +
+        System.out.println("Автобус: " + getBrand() +
                 " " + getModel() + " Объум двигателя: " + getEngineVolume());
     }
 }
