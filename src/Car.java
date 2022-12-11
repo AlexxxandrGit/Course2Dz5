@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Car extends Transport implements Competing {
 
     private BodyType bodyType;
@@ -81,5 +83,14 @@ public class Car extends Transport implements Competing {
 
     }
 
+    public boolean service() {
+        return Math.random() > 0.7 ;
+    }
+
+    @Override
+    public void repair() {
+        System.out.println("Машина " + getBrand() + " " + getModel() + " починена");
+
+    }
 
 }

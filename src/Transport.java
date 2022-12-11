@@ -1,9 +1,23 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public abstract class Transport {
     private String brand;
     private String model;
     private double engineVolume;
+
+    private final List<Driver<?>> drivers = new ArrayList<>();
+    private final List<Mechanic<?>> mechanics = new ArrayList<>();
+
+    private final List<Sponsor> sponsors = new ArrayList<>();
+
+
+
+
+
+
+
 
     public Transport(String brand, String model, double engineVolume) {
         if (brand == null || brand.isEmpty() || brand.isBlank()) {
@@ -82,11 +96,7 @@ public abstract class Transport {
 
     @Override
     public String toString() {
-        return "Transport{" +
-                "brand='" + brand + '\'' +
-                ", model='" + model + '\'' +
-                ", engineVolume=" + engineVolume +
-                '}';
+        return "Информация об авто " + getBrand() + getModel();
     }
 
     public void startMoving() {
@@ -97,8 +107,34 @@ public abstract class Transport {
         System.out.println("Закончить движение");
     }
 
+    public void addDriver(Driver<?>driver) {
+        drivers.add(driver);
 
+    }
 
+    public void addMechanic(Mechanic<?> mechanic) {
+        mechanics.add(mechanic);
+    }
+
+    public void addSponsor(Sponsor sponsor) {
+        sponsors.add(sponsor);
+    }
+
+    public List<Driver<?>> getDrivers() {
+        return drivers;
+    }
+
+    public List<Mechanic<?>> getMechanics() {
+        return mechanics;
+    }
+
+    public List<Sponsor> getSponsors() {
+        return sponsors;
+    }
+
+    public abstract boolean service();
+
+    public abstract void repair();
 
 }
 

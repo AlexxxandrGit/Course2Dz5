@@ -1,12 +1,17 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Driver<T extends Transport> {
     private String fullName;
     private String driverLicense;
     private int experience;
 
+    private final List<Driver<?>> drivers = new ArrayList<>();
+
     private T car;
 
 
-    public Driver(String fullName, String driverLicense, int experience, T car) {
+    public Driver(String fullName, String driverLicense, int experience, T car ) {
         if (fullName == null || fullName.isEmpty() || fullName.isBlank()) {
             this.fullName = "Введите корректные данные";
         } else {
@@ -17,6 +22,8 @@ public abstract class Driver<T extends Transport> {
         this.experience = experience;
         this.car = car;
     }
+
+
 
 
     public String getFullName() {
@@ -43,12 +50,12 @@ public abstract class Driver<T extends Transport> {
         this.experience = experience;
     }
 
-    @Override
-    public String toString() {
-        return String.format(
-                "Водитель %s управляет автомобилем %s %s и будет участвовать в заезде",
-                this.fullName, this.car.getBrand(), this.car.getModel());
-    }
+    // @Override
+    // public String toString() {
+    //return String.format(
+    // "Водитель %s управляет автомобилем %s %s и будет участвовать в заезде",
+    // this.fullName, this.car.getBrand(), this.car.getModel());
+    //}
 
     public void startDriving() {
         System.out.printf("Водитель %s начал двигаться", this.fullName);
@@ -65,6 +72,10 @@ public abstract class Driver<T extends Transport> {
                 this.fullName, this.car.getBrand(), this.car.getModel());
     }
 
+    @Override
+    public String toString() {
+        return getFullName() + " / Kатегория " + getDriverLicense() + " / Стаж вождения " + getExperience();
+    }
 }
 
 
