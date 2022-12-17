@@ -1,20 +1,30 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import Product.Product;
+
+import java.util.*;
 
 public class Main {
 
 
     public static void main(String[] args) {
-        Mechanic<Car> vasiliy = new Mechanic<Car>("Артем Евгеньевич", " Васильев ", "Лукойл");
+
+
+        Mechanic<Car> vasiliy = new Mechanic<Car>("Василий Евгеньевич", " Васильев ", "Лукойл");
+        Mechanic<Car> vasiliy1 = new Mechanic<Car>("Василий Евгеньевич", " Васильев ", "Лукойл");
+        Mechanic<Car> alex = new Mechanic<Car>("Александр Дмитриевич", " Тронин ", "Тархун");
+
         Sponsor gazprom = new Sponsor("Газпром", 500000);
 
         Car lada = new Car("Лада", "Гранта", 1.6, BodyType.SEDAN);
         lada.addDriver(new DriverB("Тулайкин Дмитрий Васильевич", "B", 10, lada));
         lada.addMechanic(vasiliy);
+        lada.addMechanic(vasiliy1);
+        lada.addSponsor(gazprom);
         lada.addSponsor(gazprom);
 
         Car bmw = new Car("BMW", "X5", 3.0, BodyType.OFFROADCAR);
+        bmw.addMechanic(alex);
+        bmw.addMechanic(alex);
+
         Car audi = new Car("Audi", "Q7", 2.5, BodyType.OFFROADCAR);
         Car kia = new Car("Киа", "Рио", 1.5, BodyType.SEDAN);
 
@@ -29,10 +39,16 @@ public class Main {
         maz.addDriver(new DriverC("Перов Евгений Васильевич", "C", 10, maz));
         maz.addMechanic(new Mechanic<>("Иван Иванович", " Иванов", "Пирелли"));
         maz.addSponsor(new Sponsor("МТС", 1000000));
+        maz.addSponsor(new Sponsor("МТС", 1000000));
+        maz.addSponsor(new Sponsor("МТС", 1000000));
+        maz.addSponsor(apple);
+        maz.addSponsor(apple);
         maz.addSponsor(apple);
 
 
         DriverC anton = new DriverC("Петров Антон Семенович", "С", 15, maz);
+        maz.addDriver(anton);
+        maz.addDriver(anton);
         maz.addDriver(anton);
 
 
