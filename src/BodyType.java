@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 public enum BodyType {
     SEDAN,
     HATCHBACK,

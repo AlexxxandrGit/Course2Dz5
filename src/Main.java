@@ -1,5 +1,3 @@
-import Product.Product;
-
 import java.util.*;
 
 public class Main {
@@ -61,6 +59,8 @@ public class Main {
         List<Transport> transports = List.of(lada, bmw, audi, kia,
                 kamaz, maz, hyundai, scania,
                 paz, laz, liaz, nefaz);
+
+
 
 
         //service(kia, bmw, paz, laz, audi);

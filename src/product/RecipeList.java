@@ -1,4 +1,4 @@
-package Product;
+package product;
 
 import java.util.HashSet;
 import java.util.Random;
@@ -30,5 +30,3 @@ public class RecipeList {
 
 
 }
-
-

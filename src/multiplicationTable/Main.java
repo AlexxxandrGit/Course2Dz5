@@ -1,4 +1,4 @@
-package MultiplicationTable;
+package multiplicationTable;
 
 import java.util.HashSet;
 import java.util.Random;
