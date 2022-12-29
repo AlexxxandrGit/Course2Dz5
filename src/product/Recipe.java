@@ -1,4 +1,4 @@
-package Product;
+package product;
 
 import java.util.Objects;
 import java.util.Set;
@@ -13,8 +13,7 @@ public class Recipe {
         this.totalCost = totalCost;
         this.nameRecipe = nameRecipe;
     }
-
-    public Recipe(Set<Product> productsList, int totalCost, String каша) {
+    public Recipe(Set<Product> productsList, int totalCost, String nameRecipe) {
 
     }
 
@@ -59,8 +58,8 @@ public class Recipe {
     public String toString() {
         return
                 "product=" + product +
-                ", totalCost=" + totalCost +
-                ", nameRecipe='" + nameRecipe + '\'' +
-                '}';
+                        ", totalCost=" + totalCost +
+                        ", nameRecipe='" + nameRecipe + '\'' +
+                        '}';
     }
 }
